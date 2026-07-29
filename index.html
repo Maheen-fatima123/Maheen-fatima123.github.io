@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Maheen Fatima | Air University, Islamabad</title>
+  <meta name="description"
+    content="Maheen Fatima — BS Computer Science student at Air University, Islamabad, working across AI/ML, computer vision, and full-stack development.">
+  <meta name="keywords"
+    content="Maheen Fatima, Computer Science, Air University, Artificial Intelligence, Machine Learning, Computer Vision, Full Stack Development">
+
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    crossorigin="anonymous">
+
+  <style>
+    :root {
+      --bg: #ffffff;
+      --surface: #f7f8f8;
+      --text: #202428;
+      --muted: #667079;
+      --accent: #087d78;
+      --accent-strong: #075f5b;
+      --warm: #a85524;
+      --edge: #dfe3e5;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #121416;
+        --surface: #191c1f;
+        --text: #f1f3f4;
+        --muted: #aeb6bc;
+        --accent: #64c8c2;
+        --accent-strong: #89d8d3;
+        --warm: #efa36f;
+        --edge: #30363a;
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: var(--bg);
+      color: var(--text);
+      font: 400 1rem/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img {
+      max-width: 100%;
+    }
+
+    a {
+      color: var(--accent-strong);
+      text-decoration: none;
+      transition: color 0.15s ease;
+    }
+
+    a:hover {
+      color: var(--warm);
+    }
+
+    a:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+    }
+
+    p,
+    ul,
+    ol,
+    pre,
+    blockquote {
+      margin-top: 0;
+    }
+
+    strong {
+      color: var(--text);
+      font-weight: 650;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      margin: 0;
+      color: var(--text);
+      font-family: inherit;
+      letter-spacing: 0;
+    }
+
+    .site-shell {
+      width: min(900px, calc(100% - 2.5rem));
+      margin: 0 auto 3rem;
+    }
+
+    /* ==================== PROFILE PANEL ==================== */
+    .profile-panel {
+      display: grid;
+      grid-template-columns: 148px minmax(0, 1fr);
+      gap: 1.75rem;
+      align-items: center;
+      padding: 3.25rem 0 2.4rem;
+      border-bottom: 1px solid var(--edge);
+    }
+
+    @media (max-width: 680px) {
+      .profile-panel {
+        grid-template-columns: 1fr;
+        text-align: center;
+        justify-items: center;
+        gap: 1.25rem;
+        padding: 2.25rem 0 1.8rem;
+      }
+    }
+
+    .profile-copy {
+      min-width: 0;
+    }
+
+    .image.avatar {
+      display: block;
+      width: 148px;
+      height: 148px;
+      overflow: hidden;
+      border-radius: 6px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    .image.avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .profile-panel h1 {
+      font-size: clamp(2rem, 5vw, 2.65rem);
+      line-height: 1.08;
+      font-weight: 700;
+    }
+
+    .profile-role {
+      margin: 0.45rem 0 0;
+      color: var(--text);
+      font-size: 1.06rem;
+      font-weight: 600;
+    }
+
+    .profile-affiliation,
+    .profile-email {
+      margin: 0.25rem 0 0;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .profile-affiliation a,
+    .profile-email a {
+      color: inherit;
+    }
+
+    .profile-email {
+      margin-top: 0.45rem;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.85rem;
+    }
+
+    .profile-links {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.9rem;
+      margin-top: 1rem;
+    }
+
+    @media (max-width: 680px) {
+      .profile-links {
+        justify-content: center;
+      }
+    }
+
+    .profile-actions,
+    .social-icons {
+      display: flex;
+      align-items: center;
+      gap: 0.72rem;
+      margin: 0;
+    }
+
+    .action-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.35rem 0.75rem;
+      border: 1px solid var(--edge);
+      border-radius: 4px;
+      background: var(--surface);
+      color: var(--accent-strong);
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: all 0.2s ease;
+    }
+
+    .action-chip:hover {
+      background: var(--accent-strong);
+      color: #ffffff;
+      border-color: var(--accent-strong);
+      text-decoration: none;
+    }
+
+    .social-icons a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      color: var(--muted);
+      font-size: 1.15rem;
+      transition: color 0.15s ease;
+    }
+
+    .social-icons a:hover {
+      color: var(--accent-strong);
+    }
+
+    /* ==================== CONTENT PANEL & CARDS ==================== */
+    .content-panel {
+      display: flex;
+      flex-direction: column;
+      gap: 1.75rem;
+      margin-top: 2rem;
+    }
+
+    .section-card {
+      padding: 1.75rem;
+      background: var(--surface);
+      border: 1px solid var(--edge);
+      border-radius: 8px;
+    }
+
+    .hero-card {
+      font-size: 1.02rem;
+      line-height: 1.7;
+    }
+
+    .hero-card p {
+      margin-bottom: 0.85rem;
+    }
+
+    .hero-card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .section-heading {
+      font-size: 1.18rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--edge);
+    }
+
+    /* ==================== CAREER TRAJECTORY ==================== */
+    .trajectory-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .trajectory-item {
+      display: grid;
+      grid-template-columns: 140px minmax(0, 1fr);
+      gap: 1.25rem;
+      align-items: start;
+      padding-bottom: 1.25rem;
+      border-bottom: 1px solid var(--edge);
+    }
+
+    .trajectory-item:last-child {
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+
+    @media (max-width: 600px) {
+      .trajectory-item {
+        grid-template-columns: 1fr;
+        gap: 0.35rem;
+      }
+    }
+
+    .trajectory-year {
+      color: var(--muted);
+      font-size: 0.88rem;
+      font-weight: 500;
+    }
+
+    .trajectory-copy h3 {
+      font-size: 1.05rem;
+      font-weight: 650;
+      color: var(--text);
+    }
+
+    .trajectory-role {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--accent-strong);
+      margin: 0.15rem 0 0.4rem;
+    }
+
+    .trajectory-copy p {
+      margin: 0;
+      font-size: 0.94rem;
+      color: var(--text);
+      opacity: 0.9;
+    }
+
+    /* ==================== ITEM ENTRIES ==================== */
+    .item-entry {
+      padding-bottom: 1.25rem;
+      margin-bottom: 1.25rem;
+      border-bottom: 1px solid var(--edge);
+    }
+
+    .item-entry:last-child {
+      padding-bottom: 0;
+      margin-bottom: 0;
+      border-bottom: none;
+    }
+
+    .item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .item-header h3 {
+      font-size: 1.05rem;
+      font-weight: 650;
+    }
+
+    .item-header .date-tag {
+      color: var(--muted);
+      font-size: 0.86rem;
+      font-weight: 500;
+    }
+
+    .item-sub {
+      font-size: 0.92rem;
+      color: var(--accent-strong);
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+    }
+
+    .item-desc {
+      font-size: 0.94rem;
+      margin-bottom: 0.45rem;
+      color: var(--text);
+      opacity: 0.92;
+    }
+
+    .item-links {
+      display: flex;
+      gap: 0.85rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    .item-links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.15rem 0.45rem;
+      border-radius: 3px;
+      background: var(--accent-strong);
+      color: #ffffff !important;
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-left: 0.5rem;
+      vertical-align: middle;
+    }
+
+    /* ==================== SKILLS PILLAR GRID ==================== */
+    .pillar-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+
+    .pillar-item {
+      padding: 1.1rem;
+      background: var(--bg);
+      border: 1px solid var(--edge);
+      border-radius: 6px;
+    }
+
+    .pillar-item h3 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--accent-strong);
+      margin-bottom: 0.4rem;
+    }
+
+    .pillar-item p {
+      font-size: 0.9rem;
+      margin: 0;
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    /* ==================== FOOTER ==================== */
+    footer {
+      text-align: center;
+      padding: 2.5rem 0 1rem;
+      color: var(--muted);
+      font-size: 0.85rem;
+      border-top: 1px solid var(--edge);
+      margin-top: 3rem;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="site-shell">
+
+    <!-- ==================== PROFILE HEADER ==================== -->
+    <header class="profile-panel">
+      <a class="image avatar" href="#about">
+        <img src="assets/img/profile.jpg" alt="Maheen Fatima photo">
+      </a>
+
+      <div class="profile-copy">
+        <h1>Maheen Fatima</h1>
+        <p class="profile-role">BS Computer Science Student</p>
+        <p class="profile-affiliation">
+          <a href="https://mail.au.edu.pk" target="_blank" rel="noopener">Air University, PAF Complex Islamabad,
+            Pakistan</a>
+        </p>
+        <p class="profile-email">
+          <a href="mailto:maheenfatima4466@gmail.com">maheenfatima4466@gmail.com</a>
+          <span style="margin: 0 0.3rem;">·</span>
+          <span>0334 7943134</span>
+        </p>
+
+        <div class="profile-links">
+          <div class="profile-actions">
+            <a class="action-chip" href="assets/files/Maheen_Fatima_CV.pdf" target="_blank" rel="noopener">
+              <i class="fas fa-file-alt" aria-hidden="true"></i>
+              <span>CV</span>
+            </a>
+          </div>
+
+          <div class="social-icons" aria-label="Social links">
+            <a href="https://github.com/Maheen-fatima123" target="_blank" rel="noopener" title="GitHub"
+              aria-label="GitHub">
+              <i class="fab fa-github" aria-hidden="true"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/maheen-fatima-5aa103305" target="_blank" rel="noopener"
+              title="LinkedIn" aria-label="LinkedIn">
+              <i class="fab fa-linkedin" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- ==================== MAIN CONTENT ==================== -->
+    <main class="content-panel">
+
+      <!-- ABOUT -->
+      <section id="about" class="section-card hero-card">
+        <p>
+          I am a <strong>BS Computer Science student at Air University, Islamabad</strong>, with work spanning
+          <strong>artificial intelligence, computer vision, and full-stack software development</strong>.
+          I contributed to research published at <strong>CVPR 2025</strong> under MBZUAI supervision.
+        </p>
+        <p>
+          Beyond Computer Science, I work as a fiction writer. My writings have appeared in national magazines and
+          newspapers. I've also led <em>Canvas of Hope</em>, a civic engagement initiative at a
+          government school in Islamabad.
+        </p>
+      </section>
+
+      <!-- EDUCATION -->
+      <section id="education" class="section-card">
+        <h2 class="section-heading">Education</h2>
+        <div class="item-entry">
+          <div class="item-header">
+            <h3>Air University, PAF Complex Islamabad, Pakistan</h3>
+            <span class="date-tag">Sep 2023 – Jul 2027</span>
+          </div>
+          <div class="item-sub">BS Computer Science</div>
+        </div>
+      </section>
+
+      <!-- EXPERIENCE / CAREER TRAJECTORY -->
+      <section id="experience" class="section-card">
+        <h2 class="section-heading">Experience</h2>
+        <div class="trajectory-grid">
+
+          <div class="trajectory-item">
+            <div class="trajectory-year">Jul 2026 – Present</div>
+            <div class="trajectory-copy">
+              <h3>Air University, Islamabad</h3>
+              <div class="trajectory-role">AI Engineer Intern (in house)</div>
+              <p>
+                Building Falsora, a forensic engine for deepfake and image tampering detection, using a CNN based
+                architecture with Grad-CAM explainability.
+              </p>
+            </div>
+          </div>
+
+          <div class="trajectory-item">
+            <div class="trajectory-year">Jul 2026 – Present</div>
+            <div class="trajectory-copy">
+              <h3>MBZUAI</h3>
+              <div class="trajectory-role">AI Engineer</div>
+              <p>
+                Building an OCR pipeline that grades handwritten Arabic assignments accurately despite student mistakes.
+              </p>
+            </div>
+          </div>
+
+          <div class="trajectory-item">
+            <div class="trajectory-year">Jun 2026 – Jul 2026</div>
+            <div class="trajectory-copy">
+              <h3>Institute for Transformative Leadership</h3>
+              <div class="trajectory-role">Research and Development (R&amp;D) Intern</div>
+              <p>
+                Built ReWaste, the first digital waste exchange platform for Pakistani SMEs.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- PUBLICATIONS -->
+      <section id="publications" class="section-card">
+        <h2 class="section-heading">Publications</h2>
+
+        <div class="item-entry">
+          <div class="item-header">
+            <h3>
+              All Languages Matter: Evaluating LMMs on Culturally Diverse 100 Languages
+              <span class="badge">CVPR 2025</span>
+            </h3>
+          </div>
+          <div class="item-sub">Co-author · MBZUAI</div>
+          <div class="item-links">
+            <a href="https://lnkd.in/dYc9NShF" target="_blank" rel="noopener"><i class="fas fa-file-pdf"></i> Paper</a>
+            <a href="https://lnkd.in/dym-HzCG" target="_blank" rel="noopener"><i class="fab fa-github"></i> Code &amp;
+              Benchmark</a>
+          </div>
+        </div>
+
+        <div class="item-entry">
+          <div class="item-header">
+            <h3>
+              Culturally-diverse Multilingual Multimodal Video Benchmark &amp; Model
+              <span class="badge">2025</span>
+            </h3>
+          </div>
+          <div class="item-sub">Co-author · MBZUAI</div>
+          <div class="item-links">
+            <a href="https://arxiv.org/abs/2506.07032" target="_blank" rel="noopener"><i class="fas fa-file-pdf"></i>
+              Paper</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROJECTS -->
+      <section id="projects" class="section-card">
+        <h2 class="section-heading">Projects</h2>
+
+        <div class="item-entry">
+          <div class="item-header">
+            <h3>MindSync — Cognitive Load Recommender</h3>
+            <span class="date-tag">Python, Streamlit</span>
+          </div>
+          <p class="item-desc">
+            AI-powered mental wellness app using fuzzy logic inference and Q-learning to deliver personalized
+            recommendations based on mood, sleep, and stress; trained on real-world health datasets.
+          </p>
+          <div class="item-links">
+            <a href="https://github.com/Maheen-fatima123/MindSync" target="_blank" rel="noopener"><i
+                class="fab fa-github"></i> Repository</a>
+          </div>
+        </div>
+
+        <div class="item-entry">
+          <div class="item-header">
+            <h3>LeafScan AI — Plant Disease Detection System</h3>
+            <span class="date-tag">Python, Streamlit, OpenCV, Scikit-Learn</span>
+          </div>
+          <p class="item-desc">
+            Machine learning-powered web application for plant disease detection using computer vision, feature
+            extraction, and Random Forest classification to identify healthy and diseased leaves from uploaded images.
+          </p>
+          <div class="item-links">
+            <a href="https://github.com/Maheen-fatima123/LeafScan-AI" target="_blank" rel="noopener"><i
+                class="fab fa-github"></i> Repository</a>
+          </div>
+        </div>
+
+        <div class="item-entry">
+          <div class="item-header">
+            <h3>CinaVersa — Movie Streaming Platform</h3>
+            <span class="date-tag">React, NestJS, PostgreSQL</span>
+          </div>
+          <p class="item-desc">
+            Full-stack streaming platform featuring AI-driven recommendations, role-based access control, parental
+            controls, and subscription management; deployed live online.
+          </p>
+          <div class="item-links">
+            <a href="https://cinaverse-webapp.vercel.app" target="_blank" rel="noopener"><i
+                class="fas fa-external-link-alt"></i> Live Demo</a>
+            <a href="https://github.com/Maheen-fatima123/Cinaverse-Webapp" target="_blank" rel="noopener"><i
+                class="fab fa-github"></i> Repository</a>
+          </div>
+        </div>
+
+        <div class="item-entry">
+          <div class="item-header">
+            <h3>PandaProctor — Online Examination System</h3>
+            <span class="date-tag">Python, C++</span>
+          </div>
+          <p class="item-desc">
+            Secure examination platform utilizing Haarcascade face detection for real-time identity verification,
+            monitoring, and cheat prevention.
+          </p>
+          <div class="item-links">
+            <a href="https://github.com/Maheen-fatima123/Online-examination-System" target="_blank" rel="noopener"><i
+                class="fab fa-github"></i> Repository</a>
+          </div>
+        </div>
+
+        <div class="item-entry">
+          <div class="item-header">
+            <h3>UniConnect — Blazor Web Application</h3>
+            <span class="date-tag">C#, JavaScript, SQL, Blazor</span>
+          </div>
+          <p class="item-desc">
+            Full-stack campus portal featuring event management, lost-and-found services, secure authentication, and an
+            AI-powered student support chatbot.
+          </p>
+          <div class="item-links">
+            <a href="https://github.com/Maheen-fatima123/UniConnect" target="_blank" rel="noopener"><i
+                class="fab fa-github"></i> Repository</a>
+          </div>
+        </div>
+
+        <div class="item-entry">
+          <div class="item-header">
+            <h3>Google OAuth Authentication Tool</h3>
+            <span class="date-tag">HTML, Flask</span>
+          </div>
+          <p class="item-desc">
+            Passwordless authentication system using OAuth 2.0 via Google, eliminating credential exposure and improving
+            login security.
+          </p>
+          <div class="item-links">
+            <a href="https://github.com/Maheen-fatima123/OAUTH-tool" target="_blank" rel="noopener"><i
+                class="fab fa-github"></i> Repository</a>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- AWARDS & CERTIFICATIONS -->
+      <section id="awards" class="section-card">
+        <h2 class="section-heading">Awards &amp; Certifications</h2>
+
+        <div class="item-entry">
+          <div class="item-header">
+            <h3>Young Author Award (YAA)</h3>
+            <span class="date-tag">Apr 2022</span>
+          </div>
+          <div class="item-sub">First Prize, Pakistan Learning Festival</div>
+        </div>
+
+        <div class="item-entry">
+          <div class="item-header">
+            <h3>Robotics Programme — Punjab Colleges</h3>
+            <span class="date-tag">Sep 2022</span>
+          </div>
+          <p class="item-desc">Participated in quizzes, assessments, and project displays focused on AI and Robotics.
+          </p>
+        </div>
+
+        <div class="item-entry">
+          <div class="item-header">
+            <h3>Git It Together — GitHub Skills Certificate</h3>
+            <span class="date-tag">Oct 2024</span>
+          </div>
+          <div class="item-sub">Air University Computing and Innovation Society</div>
+          <p class="item-desc">Hands-on training on GitHub version control, repository management, branching, pull
+            requests, and collaboration workflows.</p>
+        </div>
+
+        <div class="item-entry">
+          <div class="item-header">
+            <h3>How Transformer LLMs Work — DeepLearning.AI</h3>
+            <span class="date-tag">Aug 2025</span>
+          </div>
+          <p class="item-desc">Learned transformer architectures, embeddings, attention mechanisms, tokenization, and
+            Mixture of Experts (MoEs).</p>
+        </div>
+      </section>
+
+      <!-- VOLUNTEERING -->
+      <section id="volunteering" class="section-card">
+        <h2 class="section-heading">Volunteering</h2>
+
+        <div class="item-entry">
+          <div class="item-header">
+            <h3>Microsoft Learn Student Ambassadors, Air University</h3>
+            <span class="date-tag">Sep 2024 – Jun 2025</span>
+          </div>
+          <div class="item-sub">Operations Team Member</div>
+          <p class="item-desc">Organized and executed technical workshops and events for 100+ students, enhancing
+            community engagement and learning opportunities.</p>
+        </div>
+
+        <div class="item-entry">
+          <div class="item-header">
+            <h3>Air University Computing and Innovation Society (AUCIS)</h3>
+            <span class="date-tag">Sep 2024 – Dec 2025</span>
+          </div>
+          <div class="item-sub">Management Team Member</div>
+          <p class="item-desc">Drove strategic initiatives and coordinated cross-functional teams to improve society
+            operations and event delivery.</p>
+        </div>
+
+        <div class="item-entry">
+          <div class="item-header">
+            <h3>Google Developer Student Clubs, Air University</h3>
+            <span class="date-tag">Sep 2024 – Jun 2025</span>
+          </div>
+          <div class="item-sub">Marketing Team Member</div>
+          <p class="item-desc">Designed and executed marketing campaigns for technical events and workshops, expanding
+            outreach across the university.</p>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer>
+      <p>Maheen Fatima · Air University, Islamabad, Pakistan</p>
+    </footer>
+
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,316 @@
+/* ---------------------------------------------
+   Maheen Fatima — personal homepage
+   Minimal, academic-style single page layout
+--------------------------------------------- */
+
+:root {
+  --bg: #ffffff;
+  --text: #1c1c1c;
+  --muted: #6b6b6b;
+  --rule: #e4e4e4;
+  --link: #2f5f98;
+  --link-hover: #1c3f6b;
+  --max-width: 700px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 56px 20px 40px;
+}
+
+a {
+  color: var(--link);
+  text-decoration: none;
+}
+
+a:hover,
+a:focus-visible {
+  color: var(--link-hover);
+  text-decoration: underline;
+}
+
+/* ---------- Hero / header ---------- */
+
+.hero {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  margin-bottom: 8px;
+}
+
+.avatar {
+  width: 132px;
+  height: 132px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  background: #eee;
+}
+
+.hero-text h1 {
+  margin: 0 0 2px;
+  font-size: 1.7rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.tagline {
+  margin: 0;
+  font-size: 1.02rem;
+  color: var(--text);
+}
+
+.affiliation {
+  margin: 2px 0 8px;
+  color: var(--muted);
+  font-size: 0.96rem;
+}
+
+.contact-line {
+  margin: 0 0 10px;
+  font-size: 0.92rem;
+  color: var(--muted);
+}
+
+.contact-line .sep {
+  margin: 0 8px;
+}
+
+.link-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
+/* ---------- About ---------- */
+
+.about {
+  margin: 26px 0 6px;
+  padding-top: 18px;
+  border-top: 1px solid var(--rule);
+  color: #333;
+}
+
+.about p {
+  margin: 0;
+}
+
+/* ---------- Sections ---------- */
+
+section.block {
+  margin-top: 34px;
+}
+
+h2 {
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: var(--text);
+  margin: 0 0 16px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--rule);
+}
+
+.entry {
+  margin-bottom: 20px;
+}
+
+.entry:last-child {
+  margin-bottom: 0;
+}
+
+.entry-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.entry-head h3 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.entry-head .date {
+  color: var(--muted);
+  font-size: 0.86rem;
+  white-space: nowrap;
+}
+
+.role {
+  margin: 2px 0 6px;
+  font-style: italic;
+  color: #333;
+  font-size: 0.95rem;
+}
+
+.entry p.desc {
+  margin: 4px 0 6px;
+  font-size: 0.95rem;
+  color: #2b2b2b;
+}
+
+.entry .links {
+  font-size: 0.88rem;
+  font-weight: 600;
+  display: flex;
+  gap: 14px;
+}
+
+/* ---------- Skills ---------- */
+
+.skills-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.skill-row {
+  display: flex;
+  gap: 8px;
+  font-size: 0.95rem;
+  flex-wrap: wrap;
+}
+
+.skill-row .skill-label {
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.skill-row .skill-items {
+  color: #333;
+}
+
+/* ---------- Publications ---------- */
+
+.pub-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  counter-reset: pub;
+}
+
+.pub-list li {
+  counter-increment: pub;
+  margin-bottom: 18px;
+  padding-left: 26px;
+  position: relative;
+}
+
+.pub-list li:last-child {
+  margin-bottom: 0;
+}
+
+.pub-list li::before {
+  content: counter(pub) ".";
+  position: absolute;
+  left: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.pub-title {
+  font-weight: 700;
+  font-size: 0.97rem;
+}
+
+.pub-meta {
+  color: var(--muted);
+  font-size: 0.88rem;
+  margin: 2px 0 4px;
+}
+
+.pub-list .links {
+  font-size: 0.88rem;
+  font-weight: 600;
+  display: flex;
+  gap: 14px;
+}
+
+/* ---------- Awards ---------- */
+
+.award {
+  margin-bottom: 16px;
+}
+
+.award:last-child {
+  margin-bottom: 0;
+}
+
+.award-title {
+  font-weight: 700;
+  font-size: 0.97rem;
+}
+
+.award-meta {
+  color: var(--muted);
+  font-size: 0.86rem;
+  margin: 1px 0 3px;
+}
+
+.award p.desc {
+  margin: 2px 0 0;
+  font-size: 0.93rem;
+  color: #2b2b2b;
+}
+
+/* ---------- Footer ---------- */
+
+footer {
+  margin-top: 48px;
+  padding-top: 18px;
+  border-top: 1px solid var(--rule);
+  color: var(--muted);
+  font-size: 0.82rem;
+  text-align: center;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 560px) {
+  .wrap {
+    padding: 36px 18px 32px;
+  }
+
+  .hero {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .avatar {
+    width: 108px;
+    height: 108px;
+  }
+
+  .entry-head {
+    flex-direction: column;
+    gap: 2px;
+  }
+}
